@@ -48,7 +48,6 @@ def name_location(data):
     return users_name_location
 
 
-
 def generate_map(users_location):
     markers = []
 
@@ -65,22 +64,6 @@ def generate_map(users_location):
 
     return markers
 
-    # Folium Part
-
-    friends_map = folium.Map(zoom_start=3)
-
-    friends = folium.FeatureGroup(name="friends")
-
-    for usr in markers:
-        name = usr[0]
-        coordinates = usr[1]
-
-        friends.add_child(folium.Marker(location=coordinates,
-                                        popup=f"Name: {name}",
-                                        icon=folium.Icon(color='cadetblue')))
-
-    return friends_map._repr_html_()
 
 def main(nickname: str, access_token: str):
     return generate_map(name_location(twitter_friends(nickname, access_token)))
-
