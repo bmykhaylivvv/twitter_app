@@ -11,8 +11,11 @@
 
 ## How it works?
 Each time when user visit website, user will be asked to enter ***user`s nickname*** (*without @ at the beginning*) and its personal ***Bearer token***.
-    ![](images/main_screen_empty.png)
+
+![](images/main_screen_empty.png)
+
 After, user enter the data.
+
 ![](images/main_screen_blured_token.jpg)
 
 To procced user should press "**Generate the map**".
