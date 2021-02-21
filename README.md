@@ -1,4 +1,4 @@
-# Twitter_app
+# Twitter app
 ## This repository consist of 2 directories with individual projects:
 - json_analyzer
 - twitter_map
