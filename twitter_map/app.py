@@ -16,7 +16,8 @@ def gen_map():
         nickname = str(request.form["nickname"])
         access_token = str(request.form["bearer_token"])
         markers = back_end.main(nickname, access_token)
-        friends_map = folium.Map(location = (51, 0), zoom_start=3, tiles="cartodbdark_matter")
+        friends_map = folium.Map(
+            location=(51, 0), zoom_start=3, tiles="cartodbdark_matter")
 
         friends = folium.FeatureGroup(name="friends")
 
@@ -34,4 +35,5 @@ def gen_map():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
 
