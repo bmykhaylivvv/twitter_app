@@ -1,5 +1,5 @@
 # Twitter Map
-### [Website] (http://bohdanmykhayliv.pythonanywhere.com/)
+[Website link] (http://bohdanmykhayliv.pythonanywhere.com/)
 ***Films_map*** is a website for generating the map with person`s, whose nickname is given by user in form, friend on Twitter relating to their location
 
 ## Main folders 
