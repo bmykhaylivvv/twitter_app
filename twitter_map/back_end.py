@@ -27,7 +27,7 @@ def twitter_friends(nickname: str, access_token: str):
 
     search_params = {
         'screen_name': f'@{nickname}',
-        'count': 12
+        'count': 20
     }
 
     search_url = f'{base_url}1.1/friends/list.json'
