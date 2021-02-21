@@ -3,4 +3,4 @@
 - json_analyzer
 - twitter_map
 
-More abour each of them you can find inside these directories.
+*More abour each of them you can find inside these directories.*
