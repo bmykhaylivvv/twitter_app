@@ -1,6 +1,10 @@
+"""
+Module with all backend for twitter_map.
+"""
 import requests
 import pprint
 import json
+from typing import Union, List, Dict
 # geopy and folium
 from geopy.extra.rate_limiter import RateLimiter
 import folium
@@ -12,6 +16,9 @@ geocode = RateLimiter(geolocator.geocode, min_delay_seconds=2)
 
 
 def twitter_friends(nickname: str, access_token: str):
+    """
+    Function which return twitter information about given user.
+    """
     base_url = "https://api.twitter.com/"
 
     search_headers = {
@@ -36,7 +43,10 @@ def twitter_friends(nickname: str, access_token: str):
     return json_response
 
 
-def name_location(data):
+def name_location(data: Union[Dict, List]) -> List:
+    """
+    Function return users`s name and location from json file.
+    """
     if "users" not in list(data.keys()):
         return tuple()
     decoded_json = json.dumps(data, indent=4, ensure_ascii=False)
@@ -48,7 +58,10 @@ def name_location(data):
     return users_name_location
 
 
-def generate_map(users_location):
+def generate_map(users_location: List) -> List:
+    """
+    Function generates longitude and latitude depending on users` location.
+    """
     markers = []
 
     for point in users_location:
@@ -65,5 +78,9 @@ def generate_map(users_location):
     return markers
 
 
-def main(nickname: str, access_token: str):
+def main(nickname: str, access_token: str) -> List:
+    """
+    Main function which return list of view (username, location) from given twitter nickname
+    and bearer token.
+    """
     return generate_map(name_location(twitter_friends(nickname, access_token)))

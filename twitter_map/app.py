@@ -1,3 +1,6 @@
+"""
+Module for running flask app.
+"""
 from flask import Flask, redirect, url_for, render_template, request
 import folium
 import back_end
@@ -12,6 +15,9 @@ def home():
 
 @app.route("/", methods=["POST", "GET"])
 def gen_map():
+    """
+    Function check if it gets \"POST\" request, generates folium map and return this map.
+    """
     if request.method == "POST":
         nickname = str(request.form["nickname"])
         access_token = str(request.form["bearer_token"])
@@ -35,5 +41,3 @@ def gen_map():
 
 if __name__ == "__main__":
     app.run(debug=True)
-
-
